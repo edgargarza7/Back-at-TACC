@@ -19,8 +19,8 @@ def gen_pipes(matrix):
         row[-1] = RED
     gap = randint(1,6)
     matrix[gap][-1] = BLUE
-    matrix[gap+1][+1] = BLUE
     matrix[gap-1][-1] = BLUE
+    matrix[gap+1][+1] = BLUE
     return matrix
 
 def move_pipes(matrix):
@@ -33,8 +33,8 @@ def move_pipes(matrix):
 def draw_astronaut(event):
     global x
     global y
-    global game_over    
-    sense.set_pixel(x,y,BLUE)    
+    global game_over
+    sense.set_pixel(x,y,BLUE)
     if event.action == "pressed":
         if event.direction == "up" and y>0:
             y-=1
@@ -47,7 +47,7 @@ def draw_astronaut(event):
     sense.set_pixel(x,y,YELLOW)
     if matrix[y][x] == RED:
         game_over = True
-    
+
 def check_collision(matrix):
     if matrix[y][x] == RED:
         return True
@@ -70,7 +70,7 @@ while not game_over:
         if check_collision(matrix):
             game_over = True
         sleep(1)
-        
+
 sense.show_message('You lose')
 sense.clear()
 exit()
