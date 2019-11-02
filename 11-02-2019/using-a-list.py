@@ -17,3 +17,11 @@ creeper_pixels = [
 ]
 
 sense.set_pixels(creeper_pixels)
+
+board = [['X', 'O', 'X'],
+         ['O', 'X', 'O'],
+         ['O', 'O', 'X']]
+
+bands = ['TLC', 'Migos', 'Cypress Hill', 'The Roots', 'Wu Tang Clan']
+
+#Find the value for the second, fifth, and fourth bands
